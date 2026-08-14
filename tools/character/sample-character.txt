@@ -1,0 +1,43 @@
+# Settings for the character-over-stock-video builder. Every line is optional.
+
+# character: my_character.png  # explicit filename (or full path) — otherwise the only
+                               # image in the folder, or one named 'character'/'host', is used
+# stock: my_backdrop.mp4       # same idea, for the backdrop clip
+
+# start: 0:08                  # skip past an intro in the stock clip — seconds or mm:ss.
+                               # Every loop restarts from here too, not just the first play.
+
+side: left                   # left, right, or center — which side the character stands
+character_width: 950         # pixels; height follows the source image's own aspect ratio
+margin: 60                   # distance from the side edge
+# crop_bottom: 250            # px of the character hidden below the frame — raise this
+                               # for a "cropped at the waist" look without shrinking it
+
+waveform: 1                   # draw a line across the frame reacting to the voice; 0 to turn off
+# waveform_height: 160
+# waveform_y: 0.42            # fraction down the frame the line sits on
+# waveform_colour: white       # a name (white, teal, ...) or hex WITHOUT a leading # — a # starts
+                               # a comment on this line, same as everywhere else in this file
+# waveform_opacity: 1.0        # below 1, the colour blends with what's behind it — a "white" line
+                               # over a strongly coloured background will pick up that colour
+
+label: आज का दिन आपके लिए      # optional callout bar; leave blank for none
+# label_side:                  # left, right, or center — blank puts it opposite the character
+# label_size: 44
+# label_colour: 111111         # text colour — name or hex, no leading #
+# label_bg: 2FD1C5             # bar colour — name or hex, no leading #
+# label_margin: 60
+# font: Kohinoor Devanagari    # otherwise one that can draw the text is chosen
+
+# zoom: 0                      # slow push on the stock footage; 0 = as filmed
+# size: 1920x1080              # or 3840x2160 for 4K
+# fps: 30
+# quality: 18                  # lower = better quality and bigger file
+# music volume: 0.18           # before ducking
+
+# stock_audio: 1                # mix the stock clip's own sound in, quietly, under the narration.
+                               # Off by default. If the clip has no audio track, this is skipped
+                               # with a note rather than failing.
+# stock_audio_volume: 0.15      # before ducking; only matters if stock_audio is on
+
+# length: 45                   # seconds — only needed if there's no narration or music

@@ -1,0 +1,41 @@
+default: 8
+crossfade: 1
+
+scene_01 img_riya_yellow_tshirt: 7
+scene_02 img_meera_holds_tshirt: 7
+scene_03 img_riya_refuses_tshirt: 8
+scene_04 img_meera_confused: 8
+scene_05 img_breakfast_refusal: 8
+scene_06 img_shoes_refusal: 8
+scene_07 img_door_refusal: 8
+scene_08 img_meera_overwhelmed: 8
+scene_09 img_meera_closeup: 10
+scene_10 img_riya_discovery: 10
+scene_11 img_riya_dressing_herself: 10
+scene_12 img_riya_on_tiptoe: 10
+scene_13 img_riya_independence: 11
+scene_14 img_meera_watching: 11
+scene_15 img_blue_tshirt_command: 11
+scene_16 img_riya_arms_folded: 11
+scene_17 img_two_shirts_choice: 12
+scene_18 img_riya_points_shirt: 12
+scene_19 img_two_shoes_choice: 12
+scene_20 img_toothbrush_choice: 12
+scene_21 img_leaving_choice: 13
+scene_22 img_which_vs_whether: 13
+scene_23 img_fake_bath_choice: 13
+scene_24 img_riya_no_bath: 13
+scene_25 img_bath_toys_choice: 14
+scene_26 img_riya_rejects_toys: 14
+scene_27 img_calm_boundary: 14
+scene_28 img_protest_and_cooperation: 15
+scene_29 img_meera_reflective: 15
+scene_30 img_safety_hold: 16
+scene_31 img_parent_guidance: 16
+scene_32 img_yellow_tshirt_return: 17
+scene_33 img_riya_experimental: 18
+scene_34 img_riya_quiet: 19
+scene_35 img_riya_playing: 20
+scene_36 img_meera_watching_pattern: 21
+scene_37 img_two_options_again: 21
+scene_38 img_mother_daughter_door: 23

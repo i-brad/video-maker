@@ -1,0 +1,12 @@
+# When the like/subscribe sticker appears.
+# Times can be seconds (45) or minutes:seconds (0:45).
+
+at: always
+# duration: 6
+
+# every: 5:00        # use this instead of "at" for a regular interval
+# corner: bottom-left    # bottom-right, top-left, top-right
+# width: 420            # pixels
+# slide: 0.6            # seconds to slide in and out
+# margin: 60            # distance from the edge
+# opacity: 1.0

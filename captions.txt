@@ -1,0 +1,11 @@
+# Caption styling. Every line is optional.
+
+# font: Kohinoor Devanagari   # leave out and it picks one that can draw your text
+size: 56
+bottom margin: 90
+max chars: 42        # per line before wrapping
+max lines: 2
+outline: 3
+shadow: 1
+# colour: FFFFFF
+# box: 1             # solid background behind the text instead of an outline

@@ -1,0 +1,16 @@
+# Settings for the scrolling-text video. Every line is optional.
+
+# image: sudha_kitchen.png   # otherwise the first image in the folder is used
+image fit: whole             # 'whole' shows all of it; 'fill' fills the half and crops
+side: left                   # which side the image sits on
+
+size: 46                     # text size
+line spacing: 1.55
+text width: 0.42             # fraction of the frame the text column takes
+fade: 220                    # pixels of fade at the top and bottom of the column
+
+# font: Kohinoor Devanagari  # otherwise one that can draw your script is chosen
+# colour: EDEDED             # text colour
+# panel: 111114              # colour behind the text
+# zoom: 0.10                 # slow drift on the still; 0 for perfectly still
+# length: 600                # seconds — only needed if there is no narration
