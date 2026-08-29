@@ -351,6 +351,12 @@ def main(folder):
     for path, dur in zip(images, durations):
         vcmd += ['-loop', '1', '-t', f'{dur:.3f}', '-i', path]
     vcmd += [
+        # A filter graph with one input per image (dozens to hundreds) makes
+        # ffmpeg's default per-filter threading spin up far more threads than
+        # the OS allows in one process, which fails as swscale/encoder errors
+        # that look nothing like a threading problem. Capping the graph to a
+        # single thread avoids that; the encoder below still runs multi-threaded.
+        '-filter_complex_threads', '1',
         '-filter_complex_script', 'PLACEHOLDER',
         '-map', '[vout]', '-an',
         '-c:v', 'libx264', '-preset', 'medium', '-crf', str(settings['quality']),

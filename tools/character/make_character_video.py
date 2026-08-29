@@ -560,12 +560,25 @@ def main(folder):
         colour = f"0x{s['waveform_colour'].lstrip('#')}"
         opacity = float(s['waveform_opacity'])
         fade = '' if opacity >= 0.999 else f",colorchannelmixer=aa={opacity}"
+        # showwaves is only ever asked to draw in white, on black, and 'white'
+        # is used purely as a brightness mask via alphamerge — the requested
+        # colour is painted separately, by a plain colour= source, so the
+        # actual on-screen colour never passes through showwaves' own
+        # 'colors=' option at all. That option is a pipe-separated per-channel
+        # list rather than a single RGB value, and different ffmpeg builds
+        # have parsed a bare hex value there inconsistently — one build's
+        # 'requested white' has come out as something else entirely on
+        # another. Alpha from brightness sidesteps that completely: no matter
+        # how showwaves shades or anti-aliases its line, only how bright each
+        # pixel is (not what hue) ever reaches the final composite.
         lines.append(
             f"[{wave_idx}:a]aformat=sample_rates=48000:channel_layouts=stereo,"
             f"apad=whole_dur={video_len:.3f},atrim=duration={video_len:.3f},asetpts=N/SR/TB,"
-            f"showwaves=s={W}x{wave_h}:mode=line:rate={fps}:colors={colour}[wraw]"
+            f"showwaves=s={W}x{wave_h}:mode=line:rate={fps}:colors=white[wraw]"
         )
-        lines.append(f"[wraw]format=rgba,colorkey=0x000000:0.12:0.08{fade}[wave]")
+        lines.append(f"[wraw]format=gray[wmask]")
+        lines.append(f"color=c={colour}:s={W}x{wave_h}:r={fps}:d={video_len:.3f}[wfill]")
+        lines.append(f"[wfill][wmask]alphamerge{fade}[wave]")
         lines.append(f"[{last}][wave]overlay=x=0:y={wave_y}:format=auto[with_wave]")
         last = 'with_wave'
 
